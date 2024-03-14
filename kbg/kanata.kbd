@@ -1,4 +1,3 @@
-
 (defcfg
   process-unmapped-keys yes
    windows-altgr add-lctl-release
@@ -34,21 +33,25 @@ bspc (multi (release-key alt) bspc)
 del (multi (release-key alt) del) 
 )
 
+;; left and right behave differently using alt and altgr
+
+
 
 (deflayer blue 
-  grv   _    _     _     _    _    _    _    _      _    _    _    _    bspc
-  _     _    _     @left _    _    _    _    _      _    _    _    _    _
-  caps  _    @bspc @del  ret  _    _    _    @down  _    _    _    ret
-  lsft  _    _     _     _    _    _    _    _      _    _    rsft
-  lctl lmet _               spc            ralt rmet rctl
+  grv   _    _     _    	_    	_    _    _    	_		_    _    _    _    bspc
+  _     _    _     @left	@right	_    _    _    	_ 		_    _    _    _    _
+  caps  _    @bspc @del  	ret  	_    _    @left	@down	_    _    _    ret
+  lsft  _    _     _     	_    	_    _    _    	_		_    _    rsft
+  lctl lmet _               		spc            ralt rmet rctl
 )
 
 
 
 (deflayer red 
-  grv   _    _     _     _    _    _    _    _    _    _    _    _    bspc
-  _     _    _     @left _    _    _    _    _    _    _    _    _    _
-  caps  _    @bspc @del  ret  _    _    _    _    _    _    _    ret
-  lsft  _    _     _     _    _    _    _    _    _    _    rsft
+  grv   _    _     _     	_    	_    _    _    	_    	_    _    _    _    bspc
+  _     _    _     @left 	@right  _    _    _    	_    	_    _    _    _    _
+  caps  _    @bspc @del  	ret  	_    _    @left	@down	_    _    _    ret
+  lsft  _    _     _     	_    	_    _    _    	_    	_    _    rsft
   lctl lmet _               spc            ralt rmet rctl
 )
+

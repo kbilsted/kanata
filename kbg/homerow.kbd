@@ -1,0 +1,42 @@
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+							u 		i	 	o		p
+d		f			h		j		k	 	l  		grv  
+					n		m		,
+)
+
+(deflayer default
+							_    	_    	_		_
+@d		@f    		_		_    	_    	_    	_
+					_		_		_
+)
+
+(deflayer arrows
+							home	up		end		_
+_   	_ 			_		left	down    rght	_
+					_		pgup	pgdn		
+)
+
+(deflayer code
+							{    	lbrc	rbrc	}
+_		_ 			C-x   	bspc    del		enter  	;
+					bksl 	[		]		
+)
+
+(deflayer mouse
+							_    	_		_		_
+_		_ 			_		bspc    del		enter  	;
+					bksl 	[		]		
+)
+
+
+
+(defalias
+  f (tap-hold-press 200 200 f (layer-toggle arrows))
+  d (tap-hold-press 200 200 d (layer-toggle code))
+)
+
+
