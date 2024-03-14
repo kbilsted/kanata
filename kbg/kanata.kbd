@@ -1,0 +1,54 @@
+
+(defcfg
+  process-unmapped-keys yes
+   windows-altgr add-lctl-release
+)
+
+(defsrc
+ grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+
+(deflayer qwerty
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet @lalt           spc           @ralt rmet rctl
+)
+
+
+(defalias
+lalt (multi alt (layer-while-held red))
+ralt (multi alt (layer-while-held blue))
+
+left (multi (release-key alt) left) ;; release alt if held and also press left
+right (multi (release-key alt) rght) 
+down (multi (release-key alt) down) 
+up (multi (release-key alt) up) 
+bspc (multi (release-key alt) bspc) 
+del (multi (release-key alt) del) 
+)
+
+
+(deflayer blue 
+  grv   _    _     _     _    _    _    _    _      _    _    _    _    bspc
+  _     _    _     @left _    _    _    _    _      _    _    _    _    _
+  caps  _    @bspc @del  ret  _    _    _    @down  _    _    _    ret
+  lsft  _    _     _     _    _    _    _    _      _    _    rsft
+  lctl lmet _               spc            ralt rmet rctl
+)
+
+
+
+(deflayer red 
+  grv   _    _     _     _    _    _    _    _    _    _    _    _    bspc
+  _     _    _     @left _    _    _    _    _    _    _    _    _    _
+  caps  _    @bspc @del  ret  _    _    _    _    _    _    _    ret
+  lsft  _    _     _     _    _    _    _    _    _    _    rsft
+  lctl lmet _               spc            ralt rmet rctl
+)
